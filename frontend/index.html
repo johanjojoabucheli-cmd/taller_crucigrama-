@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossword Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Crucigrama Web</h1>
+        <div class="setup-container">
+            <label for="size-select">Tamaño del tablero:</label>
+            <select id="size-select">
+                <option value="5" selected>5 x 5</option>
+                <option value="10">10 x 10</option>
+            </select>
+            <button id="btn-generate">Generar Crucigrama</button>
+        </div>
+    </header>
+
+    <main class="game-container">
+        <section id="crossword-grid" class="grid-container"></section>
+
+        <section class="clues-container">
+            <div class="clues-section">
+                <h2>Horizontales (Across)</h2>
+                <ul id="clues-across"></ul>
+            </div>
+            <div class="clues-section">
+                <h2>Verticales (Down)</h2>
+                <ul id="clues-down"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

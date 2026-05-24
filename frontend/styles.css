@@ -1,0 +1,125 @@
+:root {
+    --color-bg: #f8fafc;
+    --color-cell-empty: #ffffff;
+    --color-cell-blocked: #1e293b; 
+    --color-cell-active: #bae6fd;  
+    --color-cell-correct: #bbf7d0; 
+    --color-cell-incorrect: #fecaca;
+    --grid-size: 5;                
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), 50px);
+    grid-template-rows: repeat(var(--grid-size), 50px);
+    gap: 2px;
+    background-color: #cbd5e1;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.cell {
+    position: relative;
+    background-color: var(--color-cell-empty);
+}
+
+.cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.cell.blocked {
+    background-color: var(--color-cell-blocked);
+}
+.cell.blocked input {
+    display: none; 
+}
+
+.cell input:focus, .cell.highlighted input {
+    background-color: var(--color-cell-active);
+}
+
+.cell.correct input {
+    background-color: var(--color-cell-correct);
+}
+
+.cell.incorrect input {
+    background-color: var(--color-cell-incorrect);
+}
+
+.cell-number {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-size: 0.7rem;
+    color: #64748b;
+    pointer-events: none;
+}
+
+.clues-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.clues-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.clues-section li {
+    padding: 8px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.clues-section li:hover {
+    background-color: #f1f5f9;
+}
+
+.clues-section li.active-clue {
+    background-color: var(--color-cell-active);
+    font-weight: bold;
+}
+
+.cell.correct input {
+    background-color: var(--color-cell-correct) !important;
+}
+
+.cell.incorrect input {
+    background-color: var(--color-cell-incorrect) !important;
+}
